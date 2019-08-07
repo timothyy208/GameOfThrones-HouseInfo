@@ -1,0 +1,6 @@
+framework module Pods_GoT_Houses {
+  umbrella header "Pods-GoT-Houses-umbrella.h"
+
+  export *
+  module * { export * }
+}

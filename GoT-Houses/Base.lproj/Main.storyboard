@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K4G-xF-jnz">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,239 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GoT_Houses" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BsQ-Gs-TpA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="690"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" textLabel="Owm-Ig-6bt" style="IBUITableViewCellStyleDefault" id="Q9K-Vr-13E">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q9K-Vr-13E" id="lj7-zp-iE5">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Owm-Ig-6bt">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.666666666666664"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <gestureRecognizers/>
+                                                    <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="CKM-oq-WxT" kind="show" identifier="ShowHouseInfo" id="s1g-af-iUk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BsQ-Gs-TpA" secondAttribute="trailing" id="1QT-pF-E0B"/>
+                            <constraint firstItem="BsQ-Gs-TpA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HPk-yj-zC1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BsQ-Gs-TpA" secondAttribute="bottom" id="jX5-rn-Abn"/>
+                            <constraint firstItem="BsQ-Gs-TpA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nCM-qy-1aF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="VcB-Ug-n3Y" appends="YES" id="8bT-Th-g97"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="Sej-QB-aXH"/>
+                    <connections>
+                        <outlet property="tableView" destination="BsQ-Gs-TpA" id="0V5-HF-Lvd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="VcB-Ug-n3Y">
+                    <connections>
+                        <action selector="loadMore:" destination="BYZ-38-t0r" id="IVb-l2-U3y"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="133.92857142857142"/>
+        </scene>
+        <!--House Detail View Controller-->
+        <scene sceneID="aDJ-Cv-VrB">
+            <objects>
+                <viewController modalPresentationStyle="currentContext" id="CKM-oq-WxT" customClass="HouseDetailViewController" customModule="GoT_Houses" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UhS-t0-FSb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="House Duck of Peking" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="0mv-1Q-XSe">
+                                <rect key="frame" x="16" y="0.0" width="343" height="112"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="UPy-Zk-5vM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="And it shall be roasted most magnificently" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="r1n-ZP-6ND">
+                                <rect key="frame" x="16" y="120" width="343" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="2ZK-TG-tbP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus-Condensed" family="Papyrus" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Region:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUp-vh-Uk0">
+                                <rect key="frame" x="16" y="201" width="62" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="s4h-hU-GC7"/>
+                                    <constraint firstAttribute="height" constant="21" id="wJn-pu-K3c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quack quack quack" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="fmm-EH-SCY">
+                                <rect key="frame" x="86" y="201" width="273" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="azF-rn-PJJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dorne" translatesAutoresizingMaskIntoConstraints="NO" id="1Ys-RX-IB2">
+                                <rect key="frame" x="16" y="230" width="343" height="334"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coat of Arms:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMD-82-iVe">
+                                <rect key="frame" x="26" y="572" width="106" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="KrF-Wm-C8c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Duck is very good looking" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jN5-MY-dqf">
+                                <rect key="frame" x="26" y="601" width="333" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="89" id="KRr-tO-vSM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus-Condensed" family="Papyrus" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Pd5-3U-Alo" firstAttribute="trailing" secondItem="1Ys-RX-IB2" secondAttribute="trailing" constant="16" id="3hd-TI-3mH"/>
+                            <constraint firstItem="r1n-ZP-6ND" firstAttribute="leading" secondItem="0mv-1Q-XSe" secondAttribute="leading" id="5B6-87-DX4"/>
+                            <constraint firstItem="CMD-82-iVe" firstAttribute="leading" secondItem="Pd5-3U-Alo" secondAttribute="leading" constant="26" id="5zd-L5-zNM"/>
+                            <constraint firstItem="rUp-vh-Uk0" firstAttribute="top" secondItem="r1n-ZP-6ND" secondAttribute="bottom" constant="6" id="7rT-69-CzG"/>
+                            <constraint firstItem="1Ys-RX-IB2" firstAttribute="trailing" secondItem="jN5-MY-dqf" secondAttribute="trailing" id="DyO-7x-llR"/>
+                            <constraint firstItem="0mv-1Q-XSe" firstAttribute="top" secondItem="Pd5-3U-Alo" secondAttribute="top" id="Fhz-Yb-KWW"/>
+                            <constraint firstItem="r1n-ZP-6ND" firstAttribute="top" secondItem="0mv-1Q-XSe" secondAttribute="bottom" constant="8" symbolic="YES" id="GOF-Tx-2qD"/>
+                            <constraint firstItem="jN5-MY-dqf" firstAttribute="top" secondItem="CMD-82-iVe" secondAttribute="bottom" constant="8" id="Hbl-Gf-n0H"/>
+                            <constraint firstItem="r1n-ZP-6ND" firstAttribute="trailing" secondItem="fmm-EH-SCY" secondAttribute="trailing" id="J0u-Iv-Vn2"/>
+                            <constraint firstItem="r1n-ZP-6ND" firstAttribute="leading" secondItem="rUp-vh-Uk0" secondAttribute="leading" id="JEB-qC-vup"/>
+                            <constraint firstItem="1Ys-RX-IB2" firstAttribute="leading" secondItem="Pd5-3U-Alo" secondAttribute="leading" constant="16" id="MR4-Ww-2Eu"/>
+                            <constraint firstItem="CMD-82-iVe" firstAttribute="top" secondItem="1Ys-RX-IB2" secondAttribute="bottom" constant="8" id="MzT-64-4SZ"/>
+                            <constraint firstItem="jN5-MY-dqf" firstAttribute="bottom" secondItem="Pd5-3U-Alo" secondAttribute="bottom" id="SkX-g9-ot8"/>
+                            <constraint firstItem="0mv-1Q-XSe" firstAttribute="leading" secondItem="Pd5-3U-Alo" secondAttribute="leading" constant="16" id="ZUH-2H-gUb"/>
+                            <constraint firstItem="CMD-82-iVe" firstAttribute="top" secondItem="1Ys-RX-IB2" secondAttribute="bottom" constant="8" id="mOc-np-DsW"/>
+                            <constraint firstItem="Pd5-3U-Alo" firstAttribute="trailing" secondItem="CMD-82-iVe" secondAttribute="trailing" constant="243" id="qjg-OI-NJM"/>
+                            <constraint firstItem="CMD-82-iVe" firstAttribute="leading" secondItem="jN5-MY-dqf" secondAttribute="leading" id="syO-Yy-cF7"/>
+                            <constraint firstItem="r1n-ZP-6ND" firstAttribute="trailing" secondItem="0mv-1Q-XSe" secondAttribute="trailing" id="tdf-6G-c33"/>
+                            <constraint firstItem="rUp-vh-Uk0" firstAttribute="top" secondItem="fmm-EH-SCY" secondAttribute="top" id="vW6-dL-u4n"/>
+                            <constraint firstItem="fmm-EH-SCY" firstAttribute="leading" secondItem="rUp-vh-Uk0" secondAttribute="trailing" constant="8" symbolic="YES" id="vyS-aS-ij5"/>
+                            <constraint firstItem="1Ys-RX-IB2" firstAttribute="top" secondItem="rUp-vh-Uk0" secondAttribute="bottom" constant="8" id="wpR-Vk-9bM"/>
+                            <constraint firstItem="Pd5-3U-Alo" firstAttribute="trailing" secondItem="0mv-1Q-XSe" secondAttribute="trailing" constant="16" id="xKw-Yr-FNd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pd5-3U-Alo"/>
+                    </view>
+                    <connections>
+                        <outlet property="houseCoat" destination="1Ys-RX-IB2" id="PiF-fI-y7j"/>
+                        <outlet property="houseCoatDesc" destination="jN5-MY-dqf" id="gBI-kQ-jXf"/>
+                        <outlet property="houseCoatStatic" destination="CMD-82-iVe" id="7ff-39-XeA"/>
+                        <outlet property="houseName" destination="0mv-1Q-XSe" id="riu-sQ-lhv"/>
+                        <outlet property="houseRegion" destination="fmm-EH-SCY" id="mrC-Xg-Xeb"/>
+                        <outlet property="houseWords" destination="r1n-ZP-6ND" id="NLm-iG-jGc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dFE-Ie-3ec" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1952.8" y="128.57142857142858"/>
+        </scene>
+        <!--Splash Screen View Controller-->
+        <scene sceneID="3tv-Kc-49v">
+            <objects>
+                <viewController id="K4G-xF-jnz" customClass="SplashScreenViewController" customModule="GoT_Houses" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8aD-DQ-qPa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HousesOfWesteros" translatesAutoresizingMaskIntoConstraints="NO" id="rA3-eF-IzX">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ccd-1a-Huc" appends="YES" id="Tc4-om-28I"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iFn-17-yHZ" firstAttribute="bottom" secondItem="rA3-eF-IzX" secondAttribute="bottom" id="3DA-JT-7uD"/>
+                            <constraint firstItem="rA3-eF-IzX" firstAttribute="leading" secondItem="iFn-17-yHZ" secondAttribute="leading" id="4c0-kX-gwF"/>
+                            <constraint firstItem="rA3-eF-IzX" firstAttribute="top" secondItem="iFn-17-yHZ" secondAttribute="top" id="tOw-Rv-Mg1"/>
+                            <constraint firstItem="iFn-17-yHZ" firstAttribute="trailing" secondItem="rA3-eF-IzX" secondAttribute="trailing" id="wfX-Ic-DV9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iFn-17-yHZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="splashImage" destination="rA3-eF-IzX" id="YWZ-pa-Qg9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OFH-IR-fOx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ccd-1a-Huc">
+                    <connections>
+                        <action selector="imageTapped:" destination="K4G-xF-jnz" id="DQP-5A-SMe"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="ShowTableView" id="tU7-AZ-YFG"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1047.2" y="-585.22167487684726"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xto-rw-e56">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JNX-aI-wNc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="cYb-yB-uh1">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="scc-D7-XZS">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8hB-TX-dsc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xcd-U0-Nhx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="169" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Dorne" width="313" height="278"/>
+        <image name="HousesOfWesteros" width="568" height="746"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8hB-TX-dsc"/>
+    </inferredMetricsTieBreakers>
 </document>
